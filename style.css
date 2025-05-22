@@ -1,41 +1,93 @@
-body {
-    font-family: Arial, sans-serif;
+* {
     margin: 0;
     padding: 0;
-    background: linear-gradient(to bottom, #fefbd8, #dff0ea);
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to bottom right, #fdfcfb, #e2d1c3);
     color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 header {
-    background-color: #ffcc70;
-    padding: 2em;
+    background: #ffa500;
+    color: #fff;
+    padding: 3em 0;
     text-align: center;
-    color: #3e3e3e;
+    animation: fadeInDown 1s ease-out;
+}
+
+header h1 {
+    font-size: 2.5em;
 }
 
 main {
+    padding: 2em 0;
+    display: grid;
+    gap: 2em;
+}
+
+.festa {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
-    gap: 2em;
-    padding: 2em;
+    transition: transform 0.3s ease;
 }
 
-section {
+.festa:hover {
+    transform: scale(1.02);
+}
+
+.festa img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.festa .text {
     padding: 1.5em;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
-.campo {
-    background-color: #d1e7dd;
+.festa-campo {
+    border-left: 5px solid #4caf50;
 }
 
-.cidade {
-    background-color: #f8d7da;
+.festa-cidade {
+    border-left: 5px solid #2196f3;
 }
 
 footer {
+    background: #333;
+    color: #fff;
     text-align: center;
-    padding: 1em;
-    background-color: #ccc;
+    padding: 1em 0;
+    margin-top: 2em;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (min-width: 768px) {
+    main {
+        grid-template-columns: 1fr 1fr;
+    }
 }
